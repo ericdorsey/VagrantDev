@@ -18,6 +18,7 @@ Vagrant.configure(2) do |config|
   #config.vm.provision :shell, path: "bootstrap.sh"
   config.vm.provision :shell, path: "provision.sh"
   config.vm.network :forwarded_port, host: 4567, guest: 80
+  config.vm.synced_folder "www", "/var/www"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
